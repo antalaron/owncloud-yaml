@@ -1,0 +1,32 @@
+{
+    "name": "antalaron/owncloud-yaml",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antal Áron",
+            "email": "antalaron@antalaron.hu",
+            "homepage": "https://antalaron.hu"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "league/flysystem": "^1.0",
+        "league/flysystem-webdav": "^1.0",
+        "symfony/yaml": "^4.0"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Antalaron\\OCYaml\\": "src/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.0"
+    }
+}

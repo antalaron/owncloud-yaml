@@ -1,0 +1,4 @@
+client:
+    baseUri: https://owncloud.example.com/remote.php/webdav/
+    userName: username
+    password: password

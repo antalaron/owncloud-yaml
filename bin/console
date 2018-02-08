@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+use League\Flysystem\Filesystem;
+use League\Flysystem\WebDAV\WebDAVAdapter;
+use Sabre\DAV\Client;
+use Symfony\Component\Yaml\Yaml;
+
+$config = Yaml::parse(file_get_contents(__DIR__.'/../config/config.yaml'));
+
+$settings = $config['client'];
+
+$client = new Client($settings);
+$adapter = new WebDAVAdapter($client);
+$flysystem = new Filesystem($adapter);
+
+dump(Yaml::parse($flysystem->read('megyek.yaml')));
